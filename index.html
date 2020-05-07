@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Property Guru</title>
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/semantic.min.css">
+  <link rel="stylesheet" href="static/css/dropdown.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body class="no-scroll">
+  <div class="viz">
+    <div id="viz"></div>
+  </div>
+  <div class="container-fluid">
+    <section class="panel" data-viz="us">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>Median Home Prices by County in the US</h3>
+          <p>
+            The United States is one of the world’s most attractive locations for real-estate investing. We
+            designed the
+            following data visualizations to help aspiring investors to navigate the landscape of investing
+            in American
+            real estate in a data-driven way. These visualizations leveraged data from the U.S. Census
+            Bureau, Zillow,
+            and
+            the University of Michigan.
+          </p>
+          <p>
+            The adjacent choropleth can be used to explore home prices across the United States by county.
+            Darker shades exhibited by a given county indicate higher mean home prices relative to lighter
+            shades.
+          </p>
+          <p>Once you have selected a county, you may proceed to scroll down to get more detailed information
+            about your selection.</p>
+          <div id="header">
+            <label for="county">Select or Search County by Name</label>
+            <div id="county-dropdown" class="ui fluid search selection dropdown">
+              <input type="hidden" name="county" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Select County</div>
+              <div class="menu">
+              </div>
+            </div>
+          </div>
+          <div id="scroll-indicator" class="hidden">
+            <p>Scroll down to explore</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="panel padded hidden" data-viz="bar">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="county-selection"></h2>
+          <h3>Compared to <span class="state-selection"></span></h3>
+          <p>
+            To the right, you can see how <span class="county-selection"></span> compares with the rest of
+            <span class="state-selection"></span>. For reference, the median values of the US and
+            <span class="state-selection"></span> are shown.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="panel padded hidden" data-viz="line">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="county-selection"></h2>
+          <h3>Past and Future</h3>
+          <p>
+            Historical trends of any investment can be an indication of how it may perform in the future.
+            To the right, you can see the median home prices of <span class="county-selection"></span> over time.
+            Note that for many counties, the median home price dropped significantly immediately prior and during the
+            great recession of the late 2000s and early 2010s.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="panel padded hidden" data-viz="state">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="county-selection"></h2>
+          <h3>Other Factors</h3>
+          <p>
+            There can be many things that contribute to the value of a property. Local features of the county and state
+            will always drive prices, and prices are broadly reflective of how desirable it is to live in a particular
+            area. Here, we have captured some of the socioeconomic factors that can affect property value. These factors
+            include “Crime Rate”, “Population”, and “Unemployment Rate”. Select or search for an attribute to discover
+            additional insights.
+          </p>
+
+          <label for="attribute">Select Attribute</label>
+          <div id="attribute-dropdown" class="ui fluid search selection dropdown">
+            <input type="hidden" name="attribute" />
+            <i class="dropdown icon"></i>
+            <div class="default text">Select or Search an Attribute</div>
+            <div class="menu">
+              <div class="item" data-value="CrimeRatePer100000">Crime Rate</div>
+              <div class="item" data-value="Population">Population</div>
+              <div class="item" data-value="Unemployed Rate">Unemployment Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- container -->
+  <!-- page content -->
+  <script src="static/js/jquery-1.11.0.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/semantic.min.js"></script>
+  <script src="static/js/components/dropdown.min.js"></script>
+  <script src="static/js/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/queue.v1.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="https://d3js.org/d3-array.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+  <script src="https://unpkg.com/flubber@0.3.0"></script>
+  <script src="https://unpkg.com/d3-interpolate-path/build/d3-interpolate-path.min.js"></script>
+  <script src="static/js/format.js"></script>
+  <script src="static/js/states.js"></script>
+  <script src="static/js/my-viz.js"></script>
+</body>
+
+</html>
